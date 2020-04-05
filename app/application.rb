@@ -2,6 +2,10 @@ class Application
  
   def call(env)
     resp = Rack::Response.new
+    
+    def time 
+      Time.now.to_s.split(" ")[1].split(":")[0].to_i
+    end
 
  
     if time < 12
@@ -10,9 +14,7 @@ class Application
       resp.write "Good Afternoon!"
     end
     
-    def time 
-      Time.now.to_s.split(" ")[1].split(":")[0].to_i
-    end
+    
  
     resp.finish
   end

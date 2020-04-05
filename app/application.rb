@@ -3,7 +3,8 @@ class Application
   def call(env)
     resp = Rack::Response.new
  
-    if 
+    if time > 12
+      
  
     resp.finish
   end
